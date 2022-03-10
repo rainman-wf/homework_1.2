@@ -9,12 +9,8 @@ fun main() {
         if (transactionSum * variableTaxPercent > fixedTax) (variableTaxPercent * transactionSum).toInt()
         else fixedTax
 
-    println("Сумма перевода: ${formattedSum(transactionSum)}\nКомиссия: ${formattedSum(transactionTax)}")
+    println("Сумма перевода: ${"%.2f".format(transactionSum * 0.01)}\n" +
+            "Комиссия: ${"%.2f".format(transactionTax * 0.01)}")
 }
 
-fun formattedSum (sum: Int) :String {
-    val wholePart = sum / 100
-    val cents = sum % 100
-    return "$wholePart.${if (cents != 0) cents else "00"}"
-}
 
